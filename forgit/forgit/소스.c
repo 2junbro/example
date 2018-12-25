@@ -189,7 +189,7 @@ int fileread(int login) // 파일 읽는 함수
 	if ((int)fp == -1)
 	{
 		printf("파일이 없습니다 오류");
-		return -1;
+		exit(0);
 	}
 
 	while (fscanf(fp, "%s", words_out[index]) != EOF) {  //파일 끝까지 불러오기 END of File
@@ -256,7 +256,8 @@ void gamebasic_design()
 	printf("==================================================================================================\n");
 
 }
-int main_screen()
+
+int main_screen() //main 함수
 {
 	int login = MAXMEMBER; // 현재 로그인된 사용자 정보초기화
 	while (1)
@@ -286,7 +287,7 @@ int main_screen()
 			case 2:
 				login = log_in(); //로그인으로 이동
 				break;
-			case 3:
+			case 3: //미구현
 				break;
 
 			case 4:
@@ -347,6 +348,7 @@ int main_screen()
 		}
 	}
 }
+
 void join_member()//회원가입  //전역변수 info를 사용함
 {
 	//회원가입인원수가 100명 이하일때
